@@ -6,7 +6,7 @@ Login to Admin portal should happen using valid credentials only
 @Smoke
 Scenario Outline: Login Using Valid Credentials
 Given User is on admin portal login page
-When  User Enters valid <username> and <password>
+When  User Enters credential <username> and <password>
 And   User Clicks on Login button
 Then  User should be logged in sussefully
 Examples:
@@ -16,7 +16,7 @@ Examples:
 @Admin
 Scenario Outline: Login Using Invalid Credentials
 Given User is on admin portal login page
-When  User Enters ivalid <username> and <password>
+When  User Enters credential <username> and <password>
 And   User Clicks on Login button
 Then  User should get <error>
 

@@ -114,7 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("User is on admin portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.When(string.Format("User Enters valid {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("User Enters credential {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
 testRunner.And("User Clicks on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -169,7 +169,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("User is on admin portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 19
-testRunner.When(string.Format("User Enters ivalid {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("User Enters credential {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
 testRunner.And("User Clicks on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
