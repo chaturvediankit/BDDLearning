@@ -76,7 +76,7 @@ namespace BDDLearning.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login Using Valid Credentials")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.TestCaseAttribute("admin@phptravels.com", "validPassword", null)]
+        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", null)]
         public virtual void LoginUsingValidCredentials(string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {

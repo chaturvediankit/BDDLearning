@@ -11,7 +11,7 @@ And   User Clicks on Login button
 Then  User should be logged in sussefully
 Examples:
   | username             | password      |
-  | admin@phptravels.com | validPassword |
+  | validUser | validPassword |
 
 @Admin
 Scenario Outline: Login Using Invalid Credentials

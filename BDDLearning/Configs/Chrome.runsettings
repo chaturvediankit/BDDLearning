@@ -3,9 +3,9 @@
 	<TestRunParameters>
 		<Parameter name="portal" value="Admin" />
 		<Parameter name="url" value="https://phptravels.net/api/admin"/>
-		<Parameter name="username" value="admin@phptravels.com" />
-		<Parameter name="password" value="demoadmin" />
-		<Parameter name="wrongPassword" value="demo" />
+		<Parameter name="validUser" value="admin@phptravels.com" />
+		<Parameter name="validPassword" value="demoadmin" />
+		<Parameter name="invalidPassword" value="demo" />
 	    <Parameter name="browser" value="Chrome" />
 		<Parameter name="customerFirstName" value="Ankit" />
 		<Parameter name="customerLastName" value="Chaturvedi" />
