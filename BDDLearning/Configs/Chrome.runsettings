@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="portal" value="Admin" />
+		<Parameter name="url" value="https://phptravels.net/api/admin"/>
+		<Parameter name="username" value="admin@phptravels.com" />
+		<Parameter name="password" value="demoadmin" />
+		<Parameter name="wrongPassword" value="demo" />
+	    <Parameter name="browser" value="Chrome" />
+		<Parameter name="customerFirstName" value="Ankit" />
+		<Parameter name="customerLastName" value="Chaturvedi" />
+		<Parameter name="customerEmail" value="test12@gmail.com" />
+		<Parameter name="customerPassword" value="Test123" />
+	</TestRunParameters>
+</RunSettings>
