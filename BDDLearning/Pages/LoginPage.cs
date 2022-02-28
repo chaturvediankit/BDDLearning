@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace BDDLearning.Pages
 {
-    public class LoginPage:WebDriverClass
+    public class LoginPage
     {
 
         IWebDriver driver;
@@ -18,7 +18,8 @@ namespace BDDLearning.Pages
         public IWebElement passwordTextField => driver.FindElement(By.Name("password"));
         public IWebElement loginButton => driver.FindElement(By.XPath("//span[text()='Login']"));
         public IWebElement invalidError => driver.FindElement(By.XPath("//div[text()='Invalid Login Credentials']"));
-        public IWebElement logoutButton => driver.FindElement(By.XPath("//*[@id='logout']/a"));
+        
+       
 
 
     }

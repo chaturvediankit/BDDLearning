@@ -10,7 +10,7 @@ When  User Enters credential <username> and <password>
 And   User Clicks on Login button
 Then  User should be logged in sussefully
 Examples:
-  | username             | password      |
+  | username  | password      |
   | validUser | validPassword |
 
 @Admin
@@ -21,7 +21,18 @@ And   User Clicks on Login button
 Then  User should get <error>
 
 Examples:
-  | username    | password        | error                                |
-  | validuser   | invalidPassword | Please Enter valid password          |
-  | invaliduser | invalidpassword | Please Enter valid username/password |
+  | username    | password        | error                     |
+  | validUser   | invalidPassword | Invalid Login Credentials |
+  | invalidUser | invalidPassword | Invalid Login Credentials |
+
+Scenario Outline: Logout From Admin Portal
+Given User is on admin portal login page
+When  User Enters credential <username> and <password>
+And   User Clicks on Login button
+When  User clicks on Profile Menu
+And   User logout from application
+Examples:
+  | username  | password      |
+  | validUser | validPassword |
+
   

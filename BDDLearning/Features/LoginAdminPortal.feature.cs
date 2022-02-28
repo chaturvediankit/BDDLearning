@@ -129,8 +129,8 @@ testRunner.Then("User should be logged in sussefully", ((string)(null)), ((TechT
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login Using Invalid Credentials")]
         [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.TestCaseAttribute("validuser", "invalidPassword", "Please Enter valid password", null)]
-        [NUnit.Framework.TestCaseAttribute("invaliduser", "invalidpassword", "Please Enter valid username/password", null)]
+        [NUnit.Framework.TestCaseAttribute("validUser", "invalidPassword", "Invalid Login Credentials", null)]
+        [NUnit.Framework.TestCaseAttribute("invalidUser", "invalidPassword", "Invalid Login Credentials", null)]
         public virtual void LoginUsingInvalidCredentials(string username, string password, string error, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -176,6 +176,55 @@ testRunner.And("User Clicks on Login button", ((string)(null)), ((TechTalk.SpecF
 #line hidden
 #line 21
 testRunner.Then(string.Format("User should get {0}", error), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Logout From Admin Portal")]
+        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", null)]
+        public virtual void LogoutFromAdminPortal(string username, string password, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("username", username);
+            argumentsOfScenario.Add("password", password);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logout From Admin Portal", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 28
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 29
+testRunner.Given("User is on admin portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 30
+testRunner.When(string.Format("User Enters credential {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 31
+testRunner.And("User Clicks on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 32
+testRunner.When("User clicks on Profile Menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 33
+testRunner.And("User logout from application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

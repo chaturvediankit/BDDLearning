@@ -4,6 +4,7 @@
 		<Parameter name="portal" value="Admin" />
 		<Parameter name="url" value="https://phptravels.net/api/admin"/>
 		<Parameter name="validUser" value="admin@phptravels.com" />
+		<Parameter name="invalidUser" value="admin@gmail.com" />
 		<Parameter name="validPassword" value="demoadmin" />
 		<Parameter name="invalidPassword" value="demo" />
 	    <Parameter name="browser" value="Chrome" />
