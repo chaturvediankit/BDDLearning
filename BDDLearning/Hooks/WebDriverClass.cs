@@ -7,33 +7,38 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using TechTalk.SpecFlow;
 
 namespace BDDLearning.Hooks
 {
-    internal class WebDriverClass:BaseClass
+   public class WebDriverClass
     {
-        
-        public void OpenApplication()
+
+        public IWebDriver driver;
+
+        public IWebDriver OpenApplication()
         {
             String browser = TestContext.Parameters.Get("browser");
             if (browser.Contains("Chrome"))
             {
-                MyDriver = new ChromeDriver();
-                MyDriver.Manage().Window.Maximize();
-                MyDriver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
+                driver = new ChromeDriver();
+                driver.Manage().Window.Maximize();
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
+                driver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
             }else if (browser.Contains("Firefox"))
             {
-                MyDriver = new FirefoxDriver();
-                MyDriver.Manage().Window.Maximize();
-                MyDriver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
+                driver = new FirefoxDriver();
+                driver.Manage().Window.Maximize();
+                driver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
 
             }
             else if (browser.Contains("Edge"))
             {
-                MyDriver = new EdgeDriver();
-                MyDriver.Manage().Window.Maximize();
-                MyDriver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
+                driver = new EdgeDriver();
+                driver.Manage().Window.Maximize();
+                driver.Navigate().GoToUrl(TestContext.Parameters.Get("url"));
             }
+            return driver;
 
         }
 

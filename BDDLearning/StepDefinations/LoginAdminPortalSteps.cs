@@ -2,6 +2,7 @@ using System;
 using BDDLearning.Hooks;
 using BDDLearning.Pages;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace BDDLearning.StepDefinations
@@ -9,21 +10,22 @@ namespace BDDLearning.StepDefinations
     [Binding]
     public class LoginAdminPortalSteps
     {
+        IWebDriver driver;
         [Given(@"User is on admin portal login page")]
         public void GivenUserIsOnAdminPortalLoginPage()
         {
             WebDriverClass webDriverClass = new WebDriverClass();
-            webDriverClass.OpenApplication();
+            driver=webDriverClass.OpenApplication();
            
         }
 
         [When(@"User Enters credential (.*) and (.*)")]
         public void WhenUserEntersValid(String username, string password)
         {
-            BaseClass baseClass = new BaseClass();
-            LoginPage loginPage = new LoginPage(BaseClass.MyDriver);
-            baseClass.EneterText(loginPage.usernameTextField, TestContext.Parameters.Get(username));
-
+            
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.usernameTextField.SendKeys(TestContext.Parameters.Get(username));
+           
             
         }
 

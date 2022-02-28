@@ -9,23 +9,23 @@ namespace BDDLearning.Hooks
     public  class BaseClass
     {
 
-        public static IWebDriver MyDriver;
 
-        public void EneterText(IWebElement element,String text)
+        public static void EneterText(IWebElement element,String text)
         {
+            System.Threading.Thread.Sleep(10000);
             element.Click();
             element.Clear();
             element.SendKeys(text);
         }
-        public void SelectDropDownByValue(IWebElement element, String value)
+        public static void SelectDropDownByValue(IWebElement element, String value)
         {
 
         }
-        public void SelectDropDownByVisibleText(IWebElement element, String visibleText)
+        public static void SelectDropDownByVisibleText(IWebElement element, String visibleText)
         {
 
         }
-        public void SelectDropDownByIndiex(IWebElement element, int index)
+        public static void SelectDropDownByIndiex(IWebElement element, int index)
         {
 
         }
