@@ -9,7 +9,6 @@ namespace BDDLearning.Pages
     public class AddCustomerPage
     {
         IWebDriver driver;
-        public TestContext TestContext { get; set; }
         public AddCustomerPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -26,11 +25,6 @@ namespace BDDLearning.Pages
         public IWebElement currencyDropDown => driver.FindElement(By.Name("currency"));
         public IWebElement balanceTxtField => driver.FindElement(By.Name("balance"));
 
-        public void AddCustomer()
-        {
-           
-
-        }
 
     }
 }

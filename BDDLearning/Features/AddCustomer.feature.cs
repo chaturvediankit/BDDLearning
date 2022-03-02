@@ -75,12 +75,12 @@ namespace BDDLearning.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Customer")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", "", "", null)]
-        public virtual void AddCustomer(string username, string password, string customerName, string customerEmail, string[] exampleTags)
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", "", "", "", "", "", "", null)]
+        public virtual void AddCustomer(string username, string password, string firstName, string lastname, string email, string mobile, string country, string address, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "tag1"};
+                    "Admin"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -89,8 +89,12 @@ namespace BDDLearning.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("username", username);
             argumentsOfScenario.Add("password", password);
-            argumentsOfScenario.Add("customerName", customerName);
-            argumentsOfScenario.Add("customerEmail", customerEmail);
+            argumentsOfScenario.Add("firstName", firstName);
+            argumentsOfScenario.Add("lastname", lastname);
+            argumentsOfScenario.Add("email", email);
+            argumentsOfScenario.Add("mobile", mobile);
+            argumentsOfScenario.Add("country", country);
+            argumentsOfScenario.Add("address", address);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Customer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -113,10 +117,34 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
-testRunner.When("User Navigates to Customer Dashboard page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("User is on admin portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-testRunner.Then("User enter Test name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When(string.Format("User Enters credential {0} and {1}", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+testRunner.And("User Clicks on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+testRunner.Then("User Navigates to Customer Managment page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+testRunner.When("User Clicks on Add Customer Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+testRunner.Then("User should be on Add customer page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 13
+testRunner.When(string.Format("User Enters Customer details {0} <lastName> {1} {2} {3} and {4}", firstName, email, mobile, country, address), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
+testRunner.And("User enter details for settings \'200\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+testRunner.When("User clicks Update Settings button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 16
+testRunner.Then("Customer should get addedd", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
