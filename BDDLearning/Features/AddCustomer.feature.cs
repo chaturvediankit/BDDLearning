@@ -76,8 +76,8 @@ namespace BDDLearning.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Customer")]
         [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", "", "", "", "", "", "", null)]
-        public virtual void AddCustomer(string username, string password, string firstName, string lastname, string email, string mobile, string country, string address, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("validUser", "validPassword", "Ankit", "Chaturvedi", "test11@email.com", "3421567890", "India", null)]
+        public virtual void AddCustomer(string username, string password, string firstName, string lastname, string email, string mobile, string country, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Admin"};
@@ -94,7 +94,6 @@ namespace BDDLearning.Features
             argumentsOfScenario.Add("email", email);
             argumentsOfScenario.Add("mobile", mobile);
             argumentsOfScenario.Add("country", country);
-            argumentsOfScenario.Add("address", address);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Customer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -135,7 +134,7 @@ testRunner.When("User Clicks on Add Customer Button", ((string)(null)), ((TechTa
 testRunner.Then("User should be on Add customer page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 13
-testRunner.When(string.Format("User Enters Customer details {0} <lastName> {1} {2} {3} and {4}", firstName, email, mobile, country, address), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("User Enters Customer details {0} <lastName> {1} {2} {3}", firstName, email, mobile, country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
 testRunner.And("User enter details for settings \'200\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

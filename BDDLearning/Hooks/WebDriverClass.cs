@@ -14,7 +14,7 @@ namespace BDDLearning.Hooks
    public class WebDriverClass
     {
 
-        public IWebDriver driver;
+        public static IWebDriver driver;
 
         public IWebDriver OpenApplication()
         {

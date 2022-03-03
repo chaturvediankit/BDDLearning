@@ -1,8 +1,10 @@
 using System;
 using BDDLearning.Hooks;
 using BDDLearning.Pages;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
 namespace BDDLearning.StepDefinations
@@ -76,6 +78,5 @@ namespace BDDLearning.StepDefinations
             WebDriverClass webDriverClass = new WebDriverClass();
             webDriverClass.CloseBrowser(driver);
         }
-
     }
 }
