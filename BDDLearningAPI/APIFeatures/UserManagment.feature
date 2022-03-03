@@ -10,6 +10,7 @@ Scenario Outline: Validate get user API
 Examples: 
 | id | firstName | lastName | httpCode |
 | 2  | Janet     | Weaver   | 200      |
+| 3  | Emma      | Wong     | 200      |
 
 @Users
 Scenario Outline: Validate create user API

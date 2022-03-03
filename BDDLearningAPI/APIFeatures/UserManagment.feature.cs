@@ -77,6 +77,7 @@ namespace BDDLearningAPI.APIFeatures
         [NUnit.Framework.DescriptionAttribute("Validate get user API")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.TestCaseAttribute("2", "Janet", "Weaver", "200", null)]
+        [NUnit.Framework.TestCaseAttribute("3", "Emma", "Wong", "200", null)]
         public virtual void ValidateGetUserAPI(string id, string firstName, string lastName, string httpCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -142,7 +143,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("job", job);
             argumentsOfScenario.Add("role", role);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate create user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -162,16 +163,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 16
+#line 17
 testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 18
 testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 19
 testRunner.When("User send create user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 20
 testRunner.Then("User should get created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -196,7 +197,7 @@ testRunner.Then("User should get created", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("role", role);
             argumentsOfScenario.Add("id", id);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate update user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 25
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -216,19 +217,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 26
 testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
+#line 27
 testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 28
 testRunner.Given(string.Format("user want to update user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 29
 testRunner.When("User send update user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 30
 testRunner.Then("User should get updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -252,7 +253,7 @@ testRunner.Then("User should get updated", ((string)(null)), ((TechTalk.SpecFlow
             argumentsOfScenario.Add("id", id);
             argumentsOfScenario.Add("httpCode", httpCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate delete user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 35
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -272,13 +273,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 36
+#line 37
  testRunner.Given(string.Format("User Enters user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 37
+#line 38
  testRunner.When("User send delete user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 39
  testRunner.Then(string.Format("Validate user is deleted {0}", httpCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
