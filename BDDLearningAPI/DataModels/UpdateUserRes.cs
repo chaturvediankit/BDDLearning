@@ -4,7 +4,10 @@ using System.Text;
 
 namespace BDDLearningAPI.DataModels
 {
-    internal class UpdateUserRes
+    public  class UpdateUserRes
     {
+        public string name { get; set; }
+        public string job { get; set; }
+        public DateTime updatedAt { get; set; }
     }
 }

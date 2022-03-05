@@ -20,22 +20,22 @@ namespace BDDLearningAPI.APIFeatures
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UserManagment")]
-    public partial class UserManagmentFeature
+    [NUnit.Framework.DescriptionAttribute("AddOrUpdateUser")]
+    public partial class AddOrUpdateUserFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "UserManagment.feature"
+#line 1 "AddOrUpdateUser.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "APIFeatures", "UserManagment", "User management using get User, Create user, update user and delete user", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "APIFeatures", "AddOrUpdateUser", "Test Create and Update User", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,11 +74,10 @@ namespace BDDLearningAPI.APIFeatures
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate get user API")]
+        [NUnit.Framework.DescriptionAttribute("Validate create user API")]
         [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.TestCaseAttribute("2", "Janet", "Weaver", "200", null)]
-        [NUnit.Framework.TestCaseAttribute("3", "Emma", "Wong", "200", null)]
-        public virtual void ValidateGetUserAPI(string id, string firstName, string lastName, string httpCode, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("QA", "TEST", null)]
+        public virtual void ValidateCreateUserAPI(string job, string role, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Users"};
@@ -88,12 +87,10 @@ namespace BDDLearningAPI.APIFeatures
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("id", id);
-            argumentsOfScenario.Add("firstName", firstName);
-            argumentsOfScenario.Add("lastName", lastName);
-            argumentsOfScenario.Add("httpCode", httpCode);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate get user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            argumentsOfScenario.Add("job", job);
+            argumentsOfScenario.Add("role", role);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate create user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -113,24 +110,27 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given(string.Format("User Enters user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 8
- testRunner.When("User send get user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.Then(string.Format("Validate user details {0} {1} and Http response code {2}", firstName, lastName, httpCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+testRunner.When("User send create user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+testRunner.Then("User should get created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate delete user API")]
+        [NUnit.Framework.DescriptionAttribute("Validate update user API")]
         [NUnit.Framework.CategoryAttribute("Users")]
-        [NUnit.Framework.TestCaseAttribute("2", "204", null)]
-        public virtual void ValidateDeleteUserAPI(string id, string httpCode, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("QA", "TEST", "2", null)]
+        public virtual void ValidateUpdateUserAPI(string job, string role, string id, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Users"};
@@ -140,9 +140,10 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("job", job);
+            argumentsOfScenario.Add("role", role);
             argumentsOfScenario.Add("id", id);
-            argumentsOfScenario.Add("httpCode", httpCode);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate delete user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate update user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -164,13 +165,19 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 17
- testRunner.Given(string.Format("User Enters user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
- testRunner.When("User send delete user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
- testRunner.Then(string.Format("Validate user is deleted {0}", httpCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Given(string.Format("user want to update user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 20
+testRunner.When("User send update user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 21
+testRunner.Then("User should get updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
