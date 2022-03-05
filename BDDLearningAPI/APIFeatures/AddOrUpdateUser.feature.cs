@@ -77,7 +77,7 @@ namespace BDDLearningAPI.APIFeatures
         [NUnit.Framework.DescriptionAttribute("Validate create user API")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.TestCaseAttribute("QA", "TEST", null)]
-        public virtual void ValidateCreateUserAPI(string job, string role, string[] exampleTags)
+        public virtual void ValidateCreateUserAPI(string job, string name, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Users"};
@@ -88,7 +88,7 @@ namespace BDDLearningAPI.APIFeatures
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("job", job);
-            argumentsOfScenario.Add("role", role);
+            argumentsOfScenario.Add("name", name);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate create user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -114,7 +114,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("User enters name {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
 testRunner.When("User send create user request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -130,7 +130,7 @@ testRunner.Then("User should get created", ((string)(null)), ((TechTalk.SpecFlow
         [NUnit.Framework.DescriptionAttribute("Validate update user API")]
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.TestCaseAttribute("QA", "TEST", "2", null)]
-        public virtual void ValidateUpdateUserAPI(string job, string role, string id, string[] exampleTags)
+        public virtual void ValidateUpdateUserAPI(string job, string name, string id, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Users"};
@@ -141,7 +141,7 @@ testRunner.Then("User should get created", ((string)(null)), ((TechTalk.SpecFlow
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("job", job);
-            argumentsOfScenario.Add("role", role);
+            argumentsOfScenario.Add("name", name);
             argumentsOfScenario.Add("id", id);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate update user API", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
@@ -168,7 +168,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given(string.Format("User eneters job {0}", job), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 18
-testRunner.And(string.Format("User enters role {0}", role), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("User enters name {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 19
 testRunner.Given(string.Format("user want to update user id {0}", id), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");

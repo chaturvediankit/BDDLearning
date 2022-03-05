@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using BDDLearningAPI.DataModels;
 using NUnit.Framework;
 using RestSharp;
+using RestSharp.Authenticators;
 
 namespace BDDLearningAPI
 {
-    internal class Class1
+    internal class PracticeClass
     {
         
         private RestRequest request;
@@ -16,7 +17,7 @@ namespace BDDLearningAPI
         private RestResponse response;
 
         [Test]
-        public async Task TestAPIAsync()
+        public async Task GetUserApiTest()
         {
           client = new RestClient("https://reqres.in/api/users/2");
           request = new RestRequest()
@@ -30,16 +31,24 @@ namespace BDDLearningAPI
 
         }
         [Test]
-        public async Task TestAPIPOST()
+        public async Task CreateUserApiTest()
         {
             client = new RestClient("https://reqres.in/api/users/");
-            request.Method = Method.Post;
+
+            request = new RestRequest()
+            {
+                Method = Method.Post
+
+            };
             request.AddBody(new CreateUserReq
             {
                 job = "QA",
                 name = "Ankit"
 
             }) ;
+            response=await client.ExecuteAsync(request);
+            int i = ((int)response.StatusCode);
+            Assert.IsTrue(i == 201, "Not Success");
 
         }
     }
